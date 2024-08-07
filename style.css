@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    --bg-prim: rgb(30, 30, 30);
+    --bg-sec: rgb(20, 20, 20);
+
+    --fc-prim: white;
+    
+    --acc: rgb(0, 81, 255);
+    --warn: rgb(255, 0, 0);
+}
+
+body {
+    background-color: var(--bg-prim);
+    color: var(--fc-prim);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 2dvw, 5rem);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: clamp(2rem, 1.5dvw, 3.75rem);
+    font-weight: 600;
+}
+
+h4 {
+    font-size: clamp(1.25rem, 1dvw, 3.75rem);
+    font-weight: 400;
+}
+
+h5 {
+    font-size: clamp(3rem, 3dvw, 10rem);
+    font-weight: 800;
+}
+
+h6 {
+    font-size: clamp(4rem, 4dvw, 10rem);
+    font-weight: 800;
+}
+
+a {
+    color: var(--font-prim);
+    text-decoration: none;
+
+    background: linear-gradient(var(--font-acc) 0 0) 
+    bottom center/
+    var(--underline-width, 0%) 0.2rem
+    no-repeat;
+    
+    transition: background 0.25s ease-in-out;
+}
+
+a.Warning {
+    background: linear-gradient(var(--font-warn) 0 0)
+    bottom center/
+    var(--underline-width, 0%) 0.2rem
+    no-repeat;
+}
+
+a:hover {
+    color: var(--font-acc);
+    --underline-width:100%
+}
+
+a.Warning:hover {
+    color: var(--font-warn);
+}
+
+p {
+    font-size: clamp(2rem, 1.25dvw, 4rem);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav img.logoImg {
+    height: 2rem;
+}
