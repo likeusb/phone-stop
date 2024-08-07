@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(2rem, 1.5dvw, 3.75rem);
+    font-size: clamp(1rem, 1.5dvw, 3.75rem);
     font-weight: 600;
 }
 
@@ -83,7 +83,7 @@ a.Warning:hover {
 }
 
 p {
-    font-size: clamp(2rem, 1.25dvw, 4rem);
+    font-size: clamp(1rem, 1dvw, 4rem);
 }
 
 .accent {
@@ -135,9 +135,26 @@ footer a {
 }
 
 .accessibilityButton {
-    justify-self: flex-end;
+    margin-right: 2rem;
+}
+
+.accessibilityButton img {
+    height: 2rem;
 }
 
 .accessibilityMenu {
     position: absolute;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.1s ease-in-out;
+    right: 2rem;
+    width: 30rem;
+    background-color: var(--bg-sec);
+    padding: 1rem;
+    border-radius: 1rem;
 }
+
+.accessibilityButton:hover > .accessibilityMenu {
+    transform: scale(1);
+}
+
