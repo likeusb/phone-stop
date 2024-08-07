@@ -6,8 +6,8 @@
     font-weight: 400;
     font-style: normal;
 
-    --bg-prim: rgb(30, 30, 30);
-    --bg-sec: rgb(20, 20, 20);
+    --bg-prim: black;
+    --bg-sec: rgb(15, 15, 15);
 
     --fc-prim: white;
     
@@ -20,6 +20,10 @@ body {
     color: var(--fc-prim);
 }
 
+main {
+    min-height: calc(100vh - 10rem);
+}
+
 h1 {
     font-size: clamp(2.5rem, 2dvw, 5rem);
     font-weight: 500;
@@ -28,6 +32,11 @@ h1 {
 h2 {
     font-size: clamp(2rem, 1.5dvw, 3.75rem);
     font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(0.5rem, 0.75dvw, 2rem);
+    font-weight: 300;
 }
 
 h4 {
@@ -77,6 +86,10 @@ p {
     font-size: clamp(2rem, 1.25dvw, 4rem);
 }
 
+.accent {
+    color: var(--acc);
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -88,8 +101,43 @@ nav ul {
     display: flex;
     gap: 2rem;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 nav img.logoImg {
     height: 2rem;
+}
+
+button {
+    background-color: var(--bg-sec);
+    color: var(--fc-prim);
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.1s ease-in-out;
+}
+
+button:hover {
+    color: var(--acc);
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+.accessibilityButton {
+    justify-self: flex-end;
+}
+
+.accessibilityMenu {
+    position: absolute;
 }

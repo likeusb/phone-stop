@@ -1,0 +1,23 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h6 {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-style: italic;
+}
+
+.accent {
+    font-style: italic;
+}
+
+button {
+    margin-top: 2rem;
+}
