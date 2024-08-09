@@ -1,3 +1,9 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .priceRange {
     background-color: var(--bg-tetr);
     padding: 1rem;
