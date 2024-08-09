@@ -61,3 +61,33 @@ main {
     --underline-width: 0%;
     scale: 1.05;
 }
+
+@media screen and (orientation: portrait) {
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .category {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .category img {
+        height: 100%;
+        width: 70%;
+    }
+    .category > div {
+        width: 30%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .categories > a:nth-child(3) > 
+    .borderwrap {
+        background: linear-gradient(
+            to right,
+            lime,
+            blue
+        );
+    }
+}
