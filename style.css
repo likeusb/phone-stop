@@ -8,11 +8,19 @@
 
     --bg-prim: black;
     --bg-sec: rgb(15, 15, 15);
+    --bg-tetr: rgb(20, 20, 20);
+
+    --border-prim: rgb(87, 87, 87);
 
     --fc-prim: white;
     
-    --acc: rgb(0, 81, 255);
+    --acc: rgb(50, 115, 255);
     --warn: rgb(255, 0, 0);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 }
 
 body {
@@ -21,7 +29,9 @@ body {
 }
 
 main {
-    min-height: calc(100vh - 10rem);
+    margin-top: 5rem;
+    min-height: calc(100vh - 18rem);
+    padding: 4rem 20% 4rem 20%;
 }
 
 h1 {
@@ -55,31 +65,31 @@ h6 {
 }
 
 a {
-    color: var(--font-prim);
+    color: var(--fc-prim);
     text-decoration: none;
 
-    background: linear-gradient(var(--font-acc) 0 0) 
+    background: linear-gradient(var(--acc) 0 0) 
     bottom center/
     var(--underline-width, 0%) 0.2rem
     no-repeat;
     
-    transition: background 0.25s ease-in-out;
+    transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
 a.Warning {
-    background: linear-gradient(var(--font-warn) 0 0)
+    background: linear-gradient(var(--warn) 0 0)
     bottom center/
     var(--underline-width, 0%) 0.2rem
     no-repeat;
 }
 
 a:hover {
-    color: var(--font-acc);
-    --underline-width:100%
+    color: var(--acc);
+    --underline-width: 100%
 }
 
 a.Warning:hover {
-    color: var(--font-warn);
+    color: var(--warn);
 }
 
 p {
@@ -95,6 +105,13 @@ nav {
     justify-content: center;
     height: 5rem;
     align-items: center;
+    font-size: clamp(1.25rem, 1dvw, 3.75rem);
+    font-weight: 400;
+    width: 100%;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    top: 0;
 }
 
 nav ul {

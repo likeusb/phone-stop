@@ -19,5 +19,6 @@ h2 {
 }
 
 button {
-    margin-top: 2rem;
+    margin-top: 4rem;
+    transform: scale(1.5);
 }
