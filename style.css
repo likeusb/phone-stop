@@ -64,6 +64,33 @@ h6 {
     font-weight: 800;
 }
 
+@media screen and (orientation: portrait) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 3.5rem;
+    }
+
+    h6 {
+        font-size: 4.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+
 a {
     color: var(--fc-prim);
     text-decoration: none;
@@ -100,35 +127,6 @@ p {
     color: var(--acc);
 }
 
-@media screen and (orientation: landscape) {
-    nav {
-        display: flex;
-        justify-content: center;
-        height: 5rem;
-        align-items: center;
-        font-size: clamp(1.25rem, 1dvw, 3.75rem);
-        font-weight: 400;
-        width: 100%;
-        position: fixed;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        top: 0;
-        z-index: 500;
-    }
-    
-    nav ul {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    nav img.logoImg {
-        height: 2rem;
-    }
-}
-
 button {
     background-color: var(--bg-sec);
     color: var(--fc-prim);
@@ -154,21 +152,29 @@ footer a {
     text-decoration: underline;
 }
 
-.accessibilityButton {
-    margin-right: 2rem;
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 500;
 }
-
-.accessibilityButton img {
-    height: 2rem;
+    
+nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .accessibilityMenu {
     position: absolute;
     transform: scale(0);
-    transform-origin: top right;
     transition: transform 0.1s ease-in-out;
-    right: 2rem;
-    width: 30rem;
     background-color: var(--bg-sec);
     padding: 1rem;
     border-radius: 1rem;
@@ -178,34 +184,65 @@ footer a {
     transform: scale(1);
 }
 
+@media screen and (orientation: landscape) {
+    nav {
+        height: 5rem;
+        font-size: clamp(1.25rem, 1dvw, 3.75rem);
+        width: 100%;
+        top: 0;
+    }
+    
+    nav img.logoImg {
+        height: 2rem;
+    }
+    
+    .accessibilityButton {
+        margin-right: 2rem;
+    }
+    
+    .accessibilityButton img {
+        height: 2rem;
+    }
+    
+    .accessibilityMenu {
+        right: 2rem;
+        width: 30rem;
+        transform-origin: top right;
+    }
+}
+
 @media screen and (orientation:portrait) {
     main {
         padding: 4rem 5% 4rem 5%;
     }
 
     nav {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
         height: 100dvh;
         width: 30rem;
-        position: fixed;
-        backdrop-filter: blur(10px);
-        z-index: 500;
+        top: 0;
+        font-size: 1.5rem;
     }
 
     nav ul {
-        display: flex;
         flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
     }
 
     .accessibilityButton {
-        justify-self: flex-end;
-        align-self: flex-end;
+        bottom: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .accessibilityButton img {
+        width: 4rem;
+    }
+
+    .accessibilityMenu {
+        bottom: 4rem;
+        width: 25rem;
+        transform-origin: bottom center;
     }
 }
