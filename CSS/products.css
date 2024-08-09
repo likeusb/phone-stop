@@ -143,5 +143,18 @@ p.author {
 }
 
 @media screen and (orientation: portrait) {
+    .product img:has(+ h2) {
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+    }
+
+    .links {
+        grid-row: 3 / 4;
+        grid-column: 1 / 4;
+    }
     
+    .product p,
+    .product h2 {
+        grid-row: 2 / 3;
+    }
 }

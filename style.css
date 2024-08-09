@@ -34,6 +34,12 @@ main {
     padding: 4rem 20% 4rem 20%;
 }
 
+@media screen and (orientation:portrait) {
+    main {
+        padding: 4rem 5% 4rem 5%;
+    }
+}
+
 h1 {
     font-size: clamp(2.5rem, 2dvw, 5rem);
     font-weight: 500;
@@ -112,6 +118,7 @@ nav {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     top: 0;
+    z-index: 500;
 }
 
 nav ul {
