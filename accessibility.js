@@ -11,15 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
     submit.addEventListener('click', rgbValues);
 
     reset.addEventListener('click', function() {
-        updateThemeSpecific('rgb(0, 0, 0)', 'rgb(20, 20, 20)', 'rgb(40, 40, 40)', 'rgb(87, 87, 87)', 'white', 'rgb(50, 115, 255)', 'rgb(255, 0, 0)');
+        updateThemeSpecific('#000000', '#0f0f0f', '#282828', '#575757', 'white', '#3273ff', '#ff0000');
     });
 
     lightMode.addEventListener('click', function() {
-        updateThemeSpecific('white', 'rgb(240, 240, 240)', 'rgb(235, 235, 235)', 'rgb(185, 185, 185)', 'black', 'rgb(0, 59, 185)', 'rgb(255, 0, 0)');
+        updateThemeSpecific('white', '#f0f0f0', '#ebebeb', '#b9b9b9', 'black', '#003bb9', '#ff0000');
     });
 
     grayMode.addEventListener('click', function() {
-        updateThemeSpecific('rgb(30, 30, 30', 'rgb(20, 20, 20)', 'rgb(10, 10, 10)', 'rgb(121, 121, 121)', 'white', 'rgb(58, 119, 252)', 'rgb(255, 0, 0)');
+        updateThemeSpecific('#1e1e1e', '#141414', '#0a0a0a', '#797979', 'white', '#3a77fc', '#ff0000');
     });
     
     function rgbValues() {
@@ -72,4 +72,5 @@ function getCookie(name) {
 window.onload = function() {
     const theme = getCookie('--bg-prim').split(',');
     updateTheme(theme);
+    console.log(theme);
 };
