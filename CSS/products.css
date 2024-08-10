@@ -95,7 +95,7 @@ p.author {
 }
 
 p.price {
-    background-color: green;
+    background-color: var(--price);
 }
 
 p.price,

@@ -1,6 +1,5 @@
 var r = document.querySelector(':root');
-// r.style.setProperty('--bg-prim', rgbValue);
-// document.cookie = "--bg-prim=; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax;";
+
 document.addEventListener('DOMContentLoaded', function() {  
     var submit = document.getElementById('submit');
     var reset = document.getElementById('reset');
@@ -11,15 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
     submit.addEventListener('click', rgbValues);
 
     reset.addEventListener('click', function() {
-        updateThemeSpecific('#000000', '#0f0f0f', '#282828', '#575757', 'white', '#3273ff', '#ff0000');
+        updateThemeSpecific('#000000', '#0f0f0f', '#282828', '#575757', 'white', '#3273ff', '#ff0000', "#008000");
     });
 
     lightMode.addEventListener('click', function() {
-        updateThemeSpecific('white', '#f0f0f0', '#ebebeb', '#b9b9b9', 'black', '#003bb9', '#ff0000');
+        updateThemeSpecific('white', '#f0f0f0', '#ebebeb', '#b9b9b9', 'black', '#003bb9', '#C20000', '#57ff57');
     });
 
     grayMode.addEventListener('click', function() {
-        updateThemeSpecific('#1e1e1e', '#141414', '#0a0a0a', '#797979', 'white', '#3a77fc', '#ff0000');
+        updateThemeSpecific('#1e1e1e', '#141414', '#0a0a0a', '#797979', 'white', '#3a77fc', '#ff0000', '#008000');
     });
     
     function rgbValues() {
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function updateThemeSpecific(color1, color2, color3, color4, color5, color6, color7) {
+function updateThemeSpecific(color1, color2, color3, color4, color5, color6, color7, color8) {
     r.style.setProperty('--bg-prim', color1);
     r.style.setProperty('--bg-sec', color2);
     r.style.setProperty('--bg-tert', color3);
@@ -41,8 +40,8 @@ function updateThemeSpecific(color1, color2, color3, color4, color5, color6, col
     r.style.setProperty('--fc-prim', color5);
     r.style.setProperty('--acc', color6);
     r.style.setProperty('--warn', color7);
-
-    setCookie('--bg-prim', color1 + ',' + color2 + ',' + color3 + ',' + color4 + ',' + color5 + ',' + color6 + ',' + color7);
+    r.style.setProperty('--price', color8);
+    setCookie('--bg-prim', color1 + ',' + color2 + ',' + color3 + ',' + color4 + ',' + color5 + ',' + color6 + ',' + color7 + ',' + color8);
 }
 
 function updateTheme(values) {
@@ -53,6 +52,7 @@ function updateTheme(values) {
     r.style.setProperty('--fc-prim', values[4]);
     r.style.setProperty('--acc', values[5]);
     r.style.setProperty('--warn', values[6]);
+    r.style.setProperty('--price', values[7]);
 }
 
 function setCookie(name, value) {
@@ -72,5 +72,4 @@ function getCookie(name) {
 window.onload = function() {
     const theme = getCookie('--bg-prim').split(',');
     updateTheme(theme);
-    console.log(theme);
 };
