@@ -46,3 +46,10 @@ main {
 .credits {
     text-align: center;
 }
+
+.mission,
+.credits {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
